@@ -5,7 +5,7 @@ import assert from 'assert';
 dotenv.config();
 
 //destructuring the process.env object
-const { PORT, HOST, HOST_URL, SQL_USER, SQL_PWD, SQL_DB, SQL_SERVER } = process.env;
+const { PORT, HOST, HOST_URL, SQL_USER, SQL_PWD, SQL_DB, SQL_SERVER,JWT_SECRET } = process.env;
 //exporting the variables
 const sqlEncrypt = process.env.SQL_Encrypt === 'true';
 
@@ -25,7 +25,8 @@ const config = {
             encrypt: sqlEncrypt,
             enableArithAbort: true
         }
-    }
+    },
+    jwt_secret:JWT_SECRET
 };
 
 export default config;
