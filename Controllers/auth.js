@@ -57,7 +57,7 @@ export const login =async(req, res)=>{
             const token= `JWT ${jwt.sign(
                 {USERNAME:User.USERNAME}
                 ,config.jwt_secret)}`;
-                res.status(200).json({USERNAME:User.USERNAME,id:User.USERID, token:token});
+                res.status(200).json({EMAIL:User.EMAIL,FULL_NAME:User.FULL_NAME,USERNAME:User.USERNAME,id:User.USERID,PROFILE_PIC:User.PROFILE_PIC,WEBSITE:User.WEBSITE,COVER_PIC:User.COVER_PIC,PHONE_NUMBER:User.PHONE_NUMBER, token:token});
         }
     }
 };

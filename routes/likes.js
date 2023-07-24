@@ -1,4 +1,4 @@
-import {fetchlikes,addlike,deletelike,updatelike,fetchlike} from "../controllers/likes.js";
+import {fetchlikes,addlike,deletelike} from "../controllers/likes.js";
 //likes routes
 const Likesroutes = (app)=>{
     app.route("/likes")
@@ -6,8 +6,5 @@ const Likesroutes = (app)=>{
     .post(addlike);
     app.route("/likes/:id")
     .delete(deletelike);
-    .put(updatelike);
-    .get(fetchlike);
-    
 };
 export default Likesroutes;
