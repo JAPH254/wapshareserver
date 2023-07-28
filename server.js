@@ -4,12 +4,12 @@ import config from "./dbas/config.js";
 import Authroutes from "./routes/auth.js";
 import Usersroutes from "./routes/Users.js";
 import Postsroutes from "./routes/Posts.js";
-import { addcomment } from "./Controllers/Comments.js";
+import Storiesroutes from "./routes/stories.js";
 import cors from "cors";
 import { Server } from "socket.io";
 import http from "http";
-import { log } from "console";
 import Likesroutes from "./routes/likes.js";
+import Commentsroutes from "./routes/Comments.js";
 
 //starting express server
 const app = express();
@@ -18,6 +18,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use("/upload", express.static("upload"))
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -50,11 +51,15 @@ io.on('connection', (socket)=>{
 });
 
 
+
+
+  
 Authroutes(app);
 Usersroutes(app);
 Postsroutes(app);
 Likesroutes(app);
-addcomment(app);
+Commentsroutes(app)
+Storiesroutes(app);
 
 
 app.get("/", (req, res) => {

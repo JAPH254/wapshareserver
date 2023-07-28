@@ -1,4 +1,4 @@
-import {fetchcomments,addcomment,deletecomment,updatecomment,fetchcomment} from "../controllers/Comments.js";
+import {addcomment, deletecomment, fetchcomments} from "../controllers/Comments.js";
 //comments routes
 const Commentsroutes = (app)=>{
     app.route ("/comments")
@@ -6,8 +6,6 @@ const Commentsroutes = (app)=>{
     .post(addcomment);
     app.route("/comments/:id")
     .delete(deletecomment);
-    .put(updatecomment);
-    .get(fetchcomment);
     
 };
 export default Commentsroutes;

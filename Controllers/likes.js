@@ -27,6 +27,10 @@ const fetchlikes = async (req, res) => {
 
 const addlike = async (req, res) => {
     //Adding a like to the post of the user
+    const {USERID,POSTID}=req.body;
+    const pool=await sql.connect(config.js);
+    await pool.connect()
+    input()
 };
 const deletelike = async (req, res) => {};
 export { fetchlikes, addlike, deletelike, };

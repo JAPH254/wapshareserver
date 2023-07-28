@@ -37,7 +37,7 @@ export const register = async (req, res) => {
   } finally {
     sql.close();
   }
-};
+}; 
 
 //user logging into the system
 
